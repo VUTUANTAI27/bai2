@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Đình Minh đang viết code</title>
+</head>
+<style>
+    .container {
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+h2:hover{
+    color: red;
+}
+    #bai1 img {
+        width: 100%;
+    }
+
+    button {
+        width: 10%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div id="bai1">
+            <img src="anh5.jpg" alt="" width="80px" onmouseover="vao()" onmouseout="tra()" onclick="back()"onclick="next()">
+        </div>
+        <h2>Tôi Yêu Bạn</h2><br><br><br><br><br><br><br><br><br><br><br><br>
+        <img src="minh.jpg" alt="" width="355px">
+    </div>
+</body>
+<script>
+    var img = document.querySelector("#bai1 img");
+    function vao() {
+        img.src = "img/anh2.jpg";
+    }
+    function tra() {
+        img.src = "img/anh1.jpg";
+    }
+    var anh = ["anh1.jpg", "anh2.jpg", "anh3.jpg", "anh4.jpg", "anh5.jpg"]
+    var minh = 0;
+    function next() {
+        if (minh < anh.length - 1) {
+            minh++;
+            img.src = anh[minh];
+        } else {
+            minh = 0;
+            img.src = anh[minh];
+        }
+    }
+    function back() {
+        if (minh > 0) {
+            minh--;
+            img.src = anh[minh];
+        } else {
+            minh = anh.length - 1;
+            img.src = anh[minh];
+        }
+    }
+    setInterval(next, 1000);
+    function auto() {
+        setInterval(next, 1000);
+    }
+</script>
+
+</html>
